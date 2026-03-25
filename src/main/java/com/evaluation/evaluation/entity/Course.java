@@ -14,8 +14,8 @@ import java.time.LocalDate;
 public class Course {
 
     @Id
-    @Column(nullable = false, updatable = false, length = 5)
-    private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(length = 150)
     private String description;
@@ -25,7 +25,6 @@ public class Course {
     private CourseStatus status = CourseStatus.AVAILABLE;
 
     private LocalDate dueDate;
-    private Instant completedAt;
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
